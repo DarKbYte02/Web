@@ -1,0 +1,58 @@
+Drop database if exists PracticaServlets;
+Create database if not exists PracticaServlets;
+use PracticaServlets;
+create table Categoria(
+idCategoria int not null auto_increment,
+nombre varchar(200) not null,
+descripcion varchar(200) not null,
+primary key(idCategoria));
+
+create table Producto(
+idProducto int primary key auto_increment,
+nombreProducto varchar(200) not null,
+descripcionProducto varchar(200) not null, 
+existencia int not null, 
+precio double not null,
+idCategoria int not null,
+foreign key(idCategoria) references Categoria(idCategoria) on update cascade on delete cascade);
+
+insert into Categoria (nombre,descripcion) values ("Papelería","Materiales de papelería"),
+("Higiene Personal","Articulos de cuidado personal"),
+("Literatura","Libros, novelas, periódicos"),
+("Electrónicos","Aparatos electrónicos"),
+("Música","Instrumentos musicales");
+
+insert into Producto(nombreProducto,descripcionProducto,existencia,precio,idCategoria) values
+("Lápiz","Lápiz del número 2",100,35.5,1),
+("Pluma negra","Pluma de color negra punta fina",50,50.75,1),
+("Pluma roja","Pluma de color rojo punta mediana",50,35.6,1),
+("Pluma azul","Pluma de color azul punta mediana",50,42.5,1),
+("Lapicero","Lapicero de metal punta fina",10,250.75,1);
+
+insert into Producto(nombreProducto,descripcionProducto,existencia,precio,idCategoria) values
+("Desodorante","Desodorante en spray",60,45.0,2),
+("Papel higienico","Paquete con 20 rollos de triple capa",20,300.20,2),
+("Shampoo","Shampoo con olor a cítricos humectante",30,70.8,2),
+("Acondicionador","Acondicionador para el cabello",30,69.7,2),
+("Crema corporal","Crema humectante para el cuerpo",25,100.5,2);
+
+insert into Producto(nombreProducto,descripcionProducto,existencia,precio,idCategoria) values
+("Periódico","Periódico del día",500,15.0,3),
+("Competitive Programming 1","Libro acerca de la programación competitiva (volumen 1)",5,1000.45,3),
+("Competitive Programming 2","Libro acerca de la programación competitiva (volumen 2)",5,1500.62,3),
+("El principito","Libro para niños que cuenta la historia del principito",30,150.2,3),
+("El amor en los tiempos del cólera","Novela de amor de situada temporalmente en los años 1800",15,768.9,3);
+
+insert into Producto(nombreProducto,descripcionProducto,existencia,precio,idCategoria) values
+("Licuadora","Licuadora con diferentes velocidades ajustables color roja con vaso de cristal",10,1500.45,4),
+("Pantalla de 100 pulgadas","Pantalla 4k de 100 pulgadas",5,200000.99,4),
+("Macbook Pro de 16 pulgadas","Laptop Macbook Pro de 16 pulgadas 1TB SSD y 16GB de memoria RAM procesador M1 pro",7,76667.00,4),
+("Teclado mecánico gamer","Teclado Razer con RGB mecánico para gamers",20,4500.45,4),
+("USB Kingstom","Memoria USB de 128GB de almacenamiento",15,560.8,4);
+
+insert into Producto(nombreProducto,descripcionProducto,existencia,precio,idCategoria) values
+("Guitarra","Guitarra de madera acústica",8,2500.45,5),
+("Guitarra eléctrica","Guitarra eléctrica de color roja",5,40000.5,5),
+("Teclado","Teclado musical con base de 150 centímetros",4,10000.2,5),
+("Micrófono","Micrófono profesional alámbrico",8,1777.7,5),
+("Bocina","Bocina de gran potencia",6,5660.9,5);
