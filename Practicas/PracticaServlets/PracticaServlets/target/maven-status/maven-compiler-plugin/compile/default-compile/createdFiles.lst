@@ -1,0 +1,7 @@
+escom\web\practicaservlets\ActualizarCategoria.class
+escom\web\practicaservlets\Categoria.class
+escom\web\practicaservlets\Producto.class
+escom\web\practicaservlets\CategoriaDAO.class
+escom\web\practicaservlets\CrearCategoria.class
+escom\web\practicaservlets\CRUD_Categorias.class
+escom\web\practicaservlets\ProductoDAO.class
